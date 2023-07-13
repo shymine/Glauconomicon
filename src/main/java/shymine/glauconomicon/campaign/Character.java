@@ -79,7 +79,7 @@ public class Character {
         return this;
     }
 
-    public Character addAbility(String s, Integer i) {
+    public Character addAbility(String s, int i) {
         this.abilities.put(s,i);
         return this;
     }

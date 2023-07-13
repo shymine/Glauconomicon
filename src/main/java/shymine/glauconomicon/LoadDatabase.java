@@ -32,9 +32,7 @@ public class LoadDatabase {
             Item bs = new Item();
             bs.setName("Beginner's Shield").setDescription("A shield made of wood for beginners");
             bs = itemRepository.save(bs);
-
-            log.warn("Items detached?: "+bb + bs);
-
+            
             Character hiro = new Character();
             hiro.setName("Hiro").setBackground("The hero").addEquipment(bb).addEquipment(bs).addAbility("HP", 30);
             hiro = characterRepository.save(hiro);
@@ -50,7 +48,25 @@ public class LoadDatabase {
             Campaign c1 = new Campaign();
             c1.setName("Test1").setDescription("Une campagne test").addNpc(trainer).addPc(hiro).addPlace(p1);
 
+            Campaign c2 = new Campaign();
+            c2.setName("Test2").setDescription("Seconde campagne de test");
+
+            Campaign c3 = new Campaign();
+            c3.setName("Test3").setDescription("Troisième campagne");
+
+            Campaign c4 = new Campaign();
+            c4.setName("Test4").setDescription("Quatrième campagne");
+
+            Campaign c5 = new Campaign();
+            c5.setName("Test5").setDescription("Cinquième campagne");
+
+
             log.info("Preloading "+campaignRepository.save(c1));
+            log.info("Preloading "+campaignRepository.save(c2));
+            log.info("Preloading "+campaignRepository.save(c3));
+            log.info("Preloading "+campaignRepository.save(c4));
+            log.info("Preloading "+campaignRepository.save(c5));
+
         };
     }
 }
